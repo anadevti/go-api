@@ -14,3 +14,7 @@ Se você tiver o Docker instalado, pode rodar o PostgreSQL com o seguinte comand
 `docker run --name go_db -e POSTGRES_PASSWORD=1234 -e POSTGRES_DB=postgres -p 5432:5432 -d postgres:12`
 
 A API estará disponível em http://localhost:8000.
+
+##
+
+Créditos para o vídeo, onde acompanhei a construção da API: https://www.youtube.com/watch?v=3p4mpId_ZU8&t=5s
