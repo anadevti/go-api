@@ -37,6 +37,7 @@ func main() {
 	})
 
 	server.GET("/products", productController.GetProducts)
+	server.POST("/product", productController.CreateProduct)
 
 	// Iniciando o servidor na porta 8000
 	server.Run(":8000")

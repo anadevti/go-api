@@ -2,6 +2,7 @@ package repository
 
 import (
 	"database/sql"
+	"fmt"
 	"go-api/model"
 	"log"
 )
@@ -49,4 +50,22 @@ func (pr *ProductRepository) GetProducts() ([]model.Product, error) {
 	}
 
 	return productList, nil
+}
+
+func (pr *ProductRepository) CreateProduct(product model.Product) (int, error) {
+	var id int
+	query, err := pr.Connection.Prepare("INSERT INTO product (product_name, price) VALUES ($1, $2) RETURNING id")
+	if err != nil {
+		fmt.Println(err)
+		return 0, err
+	}
+	defer query.Close() // Use defer para garantir que a consulta seja fechada
+
+	err = query.QueryRow(product.Name, product.Price).Scan(&id)
+	if err != nil {
+		fmt.Println(err)
+		return 0, err
+	}
+
+	return id, nil
 }
