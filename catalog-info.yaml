@@ -3,6 +3,8 @@ kind: Component
 metadata:
   name: go-api
   description: Go API service
+  annotations:
+      github.com/project-slug: anadevti/go-api
   tags:
     - go
     - api
