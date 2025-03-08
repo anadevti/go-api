@@ -1,0 +1,11 @@
+apiVersion: backstage.io/v1alpha1
+kind: API
+metadata:
+  name: api-go
+  description: REST Api feita em golang
+spec:
+  type: openapi
+  lifecycle: production
+  owner: user:guest
+  definition:
+    $openapi: https://api.apis.guru/v2/openapi.yaml
