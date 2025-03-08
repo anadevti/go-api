@@ -4,11 +4,11 @@ metadata:
   name: go-api
   description: Go API service
   annotations:
-      github.com/project-slug: anadevti/go-api
+    github.com/project-slug: anadevti/go-api
   tags:
     - go
     - api
 spec:
   type: service
   lifecycle: production
-  owner: guests
+  owner: group:default/guests  # ou user:default/guests, dependendo do caso
