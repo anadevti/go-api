@@ -2,8 +2,11 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: go-api
-  annotations:
-    github.com/project-slug: anadevti/go-api
+  description: Go API service
+  tags:
+    - go
+    - api
 spec:
-  type: other
-  lifecycle: unknown
+  type: service
+  lifecycle: production
+  owner: guests
