@@ -1,14 +1,11 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: API
 metadata:
   name: go-api
-  description: Go API service
-  annotations:
-    github.com/project-slug: anadevti/go-api
-  tags:
-    - go
-    - api
+  description: API desenvolvida em Go para testes básicos das operações de CRUD
 spec:
-  type: service
-  lifecycle: production
-  owner: group:default/guests  # ou user:default/guests, dependendo do caso
+  type: openapi
+  lifecycle: experimental
+  owner: anadevti
+  definition:
+    $text: ./openapi.yaml
