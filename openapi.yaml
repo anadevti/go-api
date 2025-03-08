@@ -1,0 +1,33 @@
+openapi: 3.0.0
+info:
+  title: Go API
+  version: "1.0.0"
+  description: API desenvolvida em Go para testes das operações básicas de CRUD
+servers:
+  - url: http://localhost:8080
+paths:
+  /users:
+    get:
+      summary: Lista usuários
+      tags:
+        - usuários
+      responses:
+        '200':
+          description: Lista de usuários
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/User'
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 1
+        name:
+          type: string
+          example: "aninha!!"
